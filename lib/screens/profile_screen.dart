@@ -7,6 +7,7 @@ import 'package:ticket_booking/widgets/col_lay.dart';
 import 'package:ticket_booking/widgets/layout_builder.dart';
 
 import '../utils/app_style.dart';
+import 'bottom_bar.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -79,7 +80,8 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   InkWell(
                       onTap: (){
-                       const HomeScreen();
+                        Navigator.push(context, MaterialPageRoute(
+                            builder: (_) =>const BottomBar()));
                       },
                       child: Text("Edit", style: Styles.textStyle.copyWith(color: Styles.primaryColor, fontWeight: FontWeight.w300 ),))
                 ],
@@ -197,7 +199,10 @@ class ProfileScreen extends StatelessWidget {
               )),
           Gap(AppLayout.getHeight(20)),
           InkWell(
-              onTap: ()=> const HomeScreen(),
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(
+                      builder: (_) =>const BottomBar()));
+              },
               child: Center(child: Text("How to get more miles", style: Styles.textStyle.copyWith(color: Styles.primaryColor, fontWeight: FontWeight.w500),)))
         ],
       ),
